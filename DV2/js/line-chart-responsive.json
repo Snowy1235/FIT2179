@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "data/tsx-aggregated-data-dataset=tsx2024&type=all&tgroup=All&group=All&subgroup=All&state=All&statusauth=Max&status=NT_VU_EN_CR&management=All&refyear=1985.csv"
+    "url": "data/tsx-aggregated-data.csv"
   },
   "width": "container",
   "transform": [
