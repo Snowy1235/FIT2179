@@ -30,7 +30,7 @@
           "latitude": {"field": "location-lat", "type": "quantitative"},
           "order":{"field":"timestamp","type": "temporal"},
           "tooltip":[
-            {"field":"individual_local_identifier","title":"id"}
+            {"field":"tag_local_identifier","title":"id"}
         ]
         }
         
