@@ -22,7 +22,7 @@
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/CurlewTracking.csv"
         },
         "transform": [
-          {"filter":"datum.algorithm_marked_outlier == ''"}
+          {"filter":"datum.algorithm_marked_outlier == '' & datum.tag_local_identifier == 40961"}
         ],
         "mark": {"type": "line"},
         "encoding": {
@@ -31,7 +31,10 @@
           "order":{"field":"timestamp","type": "temporal"},
           "tooltip":[
             {"field":"tag_local_identifier","title":"id"}
-        ]
+        ],
+        "color":{
+          "field":"tag_local_identifier"
+        }
         }
         
       }
