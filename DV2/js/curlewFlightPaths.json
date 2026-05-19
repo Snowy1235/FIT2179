@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height":400,
+    "projection": {"type": "equirectangular"},
+    "config": {
+        "view": {"stroke":"transparent"}
+    },
+    "background":"#ffffff",
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/Aust-region-shapemap.topojson",
+          "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
+        },
+        
+        "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/CurlewTracking"
+        },
+        "mark": {"type": "line"},
+        "encoding": {
+          "longitude": {"field": "location-long", "type": "quantitative"},
+          "latitude": {"field": "location-lat", "type": "quantitative"},
+          "order":{"field":"timestamp","type": "temporal"}
+        }
+      }
+    ]
+  }
