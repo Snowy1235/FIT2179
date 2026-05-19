@@ -1,5 +1,6 @@
 body *{
   font-family: 'Open Sans', sans-serif;
+  
 }
 
 h1 {
@@ -7,15 +8,20 @@ h1 {
 }
 
 body {
-  background-color: lightgray;
+  background-color: rgb(209, 209, 209);
+}
+
+img {
+  width: 80%;
+  margin: auto;
 }
 
 .page {
-  width: 850px;
-  background-color: white;
+  width: 1200px;
+  background-color: rgb(255, 255, 255);
   margin: auto;
-  padding: 50px;
-  padding-top: 35px;
+  padding: 20px;
+  padding-top: 15px;
 }
 
 .vis-container {
@@ -36,7 +42,7 @@ h1 {
 }
 
 .pure-g {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .small-font {

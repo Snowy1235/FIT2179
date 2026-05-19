@@ -1,25 +1,43 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "title": "Something",
-    "projection": {"type": "azimuthalEqualArea"},
+    "projection": {"type": "equirectangular"},
+    "config": {
+        "view": {"stroke":"transparent"}
+    },
+    "background":"#ffffff",
     "layer": [
       {
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/Aust-region-shapemap.topojson",
-          "format": {"type": "topojson", "feature": "SA3_NAME21"}
+          "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
         },
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+        "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
       },
       {
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/tsx-aggregated-data.csv"
         },
+        "transform": [
+          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Birds' & datum.NationalPriorityTaxa==1"}
+        ],
         "mark": {"type": "circle", "tooltip": {"content": "data"}},
         "encoding": {
           "longitude": {"field": "RegionCentroidLongitude", "type": "quantitative"},
-          "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"}
+          "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"},
+          "color":{
+            "field":"IUCNStatus",
+            "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
+            "title":"Endangerment status",
+            "type": "nominal",
+            "scale": {"scheme": "redyellowgreen"},
+            "legend":{"offset":-120}
+          },
+          "tooltip":[
+            {"field":"CommonName","title":"Name"}
+          ]
         }
+        
       }
     ]
   }
