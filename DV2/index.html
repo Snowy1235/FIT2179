@@ -45,15 +45,15 @@
       </div>
 
       <div class="pure-u-1-4">
-        <div id="vis2" class="vis-container"></div>
+        <div id="OBP" class="vis-container"></div>
       </div>
 
       <div class="pure-u-1-4">
-        <div id="vis2" class="vis-container"></div>
+        <div id="ECFP" class="vis-container"></div>
       </div>
 
       <div class="pure-u-1-4">
-        <div id="vis2" class="vis-container"></div>
+        <h2>Pee</h2>
       </div>
 
       <div class="pure-u-1-2">
@@ -76,7 +76,7 @@
         <p>This contrasts hugely with the 164 endangered birds listed in australia as vulnerable, endangered or critically endangered</p>
       </div>
       <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
+        <div id="EndangeredMap" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
         <p></p>
@@ -109,8 +109,10 @@
   <script type="text/javascript">
     var specVis1 = "./js/symbol_map_with_graticules.vg.json";
     var specVis2 = "./js/ParrotPop"
-    vegaEmbed('#vis1', specVis1, { "actions": false });
-    vegaEmbed('#vis2',specVis2, {"actions":false})
+    var specVis3 = "./js/curlewFlightPaths.json"
+    vegaEmbed('#EndangeredMap', specVis1, { "actions": false });
+    vegaEmbed('#OBP',specVis2, {"actions":false})
+    vegaEmbed('#ECFP',specVis3, {"actions":false})
 
   </script>
 

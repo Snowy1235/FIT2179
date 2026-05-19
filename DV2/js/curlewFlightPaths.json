@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height":400,
-    "projection": {"type": "equirectangular"},
+    "projection": {"type": "equalEarth"},
     "config": {
         "view": {"stroke":"transparent"}
     },
@@ -10,7 +10,7 @@
     "layer": [
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/Aust-region-shapemap.topojson",
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/worldMapLowRes.topojson",
           "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
         },
         
@@ -18,7 +18,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/CurlewTracking"
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/CurlewTracking.csv"
         },
         "mark": {"type": "line"},
         "encoding": {
