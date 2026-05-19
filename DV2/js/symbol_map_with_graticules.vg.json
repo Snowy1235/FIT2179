@@ -12,6 +12,7 @@
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/Aust-region-shapemap.topojson",
           "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
         },
+        
         "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
       },
       {
