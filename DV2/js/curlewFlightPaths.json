@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "projection": {"type": "equalEarth"},
+    "projection": {"type": "azimuthalEqualArea"},
     "config": {
         "view": {"stroke":"transparent"}
     },
@@ -27,13 +27,7 @@
         "encoding": {
           "longitude": {"field": "location-long", "type": "quantitative"},
           "latitude": {"field": "location-lat", "type": "quantitative"},
-          "order":{"field":"timestamp","type": "temporal"},
-          "tooltip":[
-            {"field":"tag_local_identifier","title":"id"}
-        ],
-        "color":{
-          "field":"tag_local_identifier"
-        }
+          "order":{"field":"timestamp","type": "temporal"}
         }
         
       }
