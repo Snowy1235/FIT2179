@@ -35,15 +35,11 @@
             "scale": {"scheme": "redyellowgreen"},
             "legend":{"offset":-100}
           },
-          "size":{
-            "field":"CommonName"
-          },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
             {"field":"Population","title":"Estimated population"}
           ]
         }
-        
       }
     ]
   }
