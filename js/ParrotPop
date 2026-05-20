@@ -16,8 +16,9 @@
                 {"year":2022, "total":37, "gender":"female"},
                 {"year":2023, "total":81, "gender":"all"},
                 {"year":2024, "total":37, "gender":"male"},
-                {"year":2024, "total":55, "gender":"female"}
-                ]
+                {"year":2024, "total":55, "gender":"female"},
+                {"year":2025, "total":51, "gender":"male"},
+                {"year":2025, "total":25, "gender":"female"}]
             },
             "mark": "bar",
             "encoding": {

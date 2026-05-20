@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "projection": {"type": "transverseMercator"},
+    "title":"Far Eastern Curlew Annual migration path",
+    "projection": {"type": "equirectangular"},
     "config": {
         "view": {"stroke":"transparent"}
     },
