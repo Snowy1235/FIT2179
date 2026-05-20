@@ -36,7 +36,8 @@
             "legend":{"offset":-100}
           },
           "tooltip":[
-            {"field":"CommonName","title":"Name"}
+            {"field":"CommonName","title":"Name"},
+            {"field":"Population","title":"Estimated population"}
           ]
         }
         
