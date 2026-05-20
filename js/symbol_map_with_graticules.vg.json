@@ -10,7 +10,7 @@
     "layer": [
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/shapefiles/Aust-region-shapemap.topojson",
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main=/shapefiles/Aust-region-shapemap.topojson",
           "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
         },
         
@@ -18,7 +18,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/DV2/data/tsx-aggregated-data.csv"
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
         },
         "transform": [
           {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Birds' & datum.NationalPriorityTaxa==1"}
