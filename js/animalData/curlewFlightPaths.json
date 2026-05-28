@@ -7,7 +7,6 @@
         "view": {"stroke":"transparent"}
     },
     "background":"#ffffff",
-    
     "layer": [
       {
         "data": {
@@ -30,6 +29,8 @@
           "latitude": {"field": "location-lat", "type": "quantitative"},
           "order":{"field":"timestamp","type": "temporal"}
         }
+      },
+      {
         
       }
     ]

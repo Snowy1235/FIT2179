@@ -13,7 +13,7 @@
         ],
         "mark": {"type": "bar", "tooltip": {"content": "data"}},
         "encoding": {
-          "y": {"field": "CommonName", "type": "ordinal","sort":"x"},
+          "y": {"field": "CommonName", "type": "ordinal","sort":"x","title":"Species"},
           "x": {"field": "Population", "type": "quantitative", "aggregate":"average"},
           "color":{
             "field":"IUCNStatus",

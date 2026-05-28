@@ -36,7 +36,7 @@
               "domain":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
               "range": ["#d7191c","#fdae61","#ffffbf","#a6d96a","#1a9641"]
             },
-            "legend":{"offset":-100}
+            "legend":{"offset":-200}
           },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
