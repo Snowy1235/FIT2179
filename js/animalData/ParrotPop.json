@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title": "orange bellied parrot Sightings australia",
+    "background": "#ffffff",
+    "layer":[
+        {
+            "data": {
+            "values":[
+                {"year":2019, "total":11, "gender":"male" },
+                {"year":2019, "total":9, "gender":"female"},
+                {"year":2020, "total":23, "gender":"all"},
+                {"year":2021, "total":34, "gender":"male"},
+                {"year":2021, "total":36, "gender":"female"},
+                {"year":2022, "total":30, "gender":"male"},
+                {"year":2022, "total":37, "gender":"female"},
+                {"year":2023, "total":81, "gender":"all"},
+                {"year":2024, "total":37, "gender":"male"},
+                {"year":2024, "total":55, "gender":"female"},
+                {"year":2025, "total":51, "gender":"male"},
+                {"year":2025, "total":25, "gender":"female"}]
+            },
+            "mark": "bar",
+            "encoding": {
+                "x":{"field":"year","type": "ordinal","title":"Year","axis":{"labelAngle":0}},
+                "y":{"aggregate":"sum", "field":"total","title":"Number of sighted parrots"},
+                "color":{
+                    "field":"gender",
+                    "scale":{"range":["#1d8f2c","#8c34eb","#0b6bbf"]}
+                },
+                
+                "tooltip":[
+                    {"field":"total","title":"Number of sighted parrots"}
+                ]
+            }
+        }
+    ]
+    
+  }

@@ -43,7 +43,7 @@
         <h2>Birds</h2>
       </div>
       <div class="pure-u-1-4">
-        <div class="description description-right">
+        <div>
           <img src="images/OrangeBelliedParrotmed.png">
           </div>
       </div>
@@ -73,18 +73,19 @@
         <p>The far eastern curlew, despite having an estimated number of mature birds in the range of 23 thousand, is still a vulnerable species of which nearly 75% come to Australia for the summer to roost</p>
       </div>
     <!--Show all super endangered birds-->
-      <div class="pure-u-1-4">
-        <h2>Endangered birds which are monitored</h2>
-        <p>There are 5 birds directly monitored by the australian government, being the most at risk in the country.</p>
-        <p>This contrasts hugely with the 164 endangered birds listed in australia as vulnerable, endangered or critically endangered</p>
-        <p>By far the most recorded bird is the far eastern curlew, likely because they are shorebirds and most Australians live near the coastline.</p>
+      <div class="pure-u-1-4">   
+        <h2>Title/Chart desc</h2>
+        <p></p>
       </div>
       <div class="pure-u-1-2">
         <div id="birdMap" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
-        <h2></h2>
-        <p></p>
+        <h2>Endangered birds which are monitored</h2>
+        <p>There are 5 birds directly monitored by the australian government, being the most at risk in the country.</p>
+        <p>This contrasts hugely with the 164 endangered birds listed in australia as vulnerable, endangered or critically endangered</p>
+        <p>By far the most recorded bird is the far eastern curlew, likely because they are shorebirds and most Australians live near the coastline.</p>
+
       </div>
     </div>
 
@@ -93,6 +94,31 @@
       <div class="pure-u-1-1">
         <h2>Amphibians</h2>
       </div>
+
+      <div class="pure-u-1-4">
+        <div>
+          <h2>Southern Corroboree Frog</h2>
+        <img src="images/SouthernCorroboree.png">
+      </div>
+      </div>
+      <div class="pure-u-1-4">
+        <div id="FPC" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+        <div id="ECFP" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+        <h2>Red and Yellow Mountain Frog</h2>
+        <img src="images/RedNYellowFrog.webp">
+      </div>
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+
       <div class="pure-u-1-2">
         <div id="amphibianMap" class="vis-container"></div>
       </div>
@@ -111,14 +137,21 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var birdMap = "./js/birdMap.json";
-    var OBP = "./js/ParrotPop.json"
-    var ECFP = "./js/curlewFlightPaths.json"
-    var amphibianMap = "./js/amphibianMap.json"
+    var birdMap = "./js/maps/birdMap.json";
     vegaEmbed('#birdMap', birdMap, { "actions": false });
-    vegaEmbed('#OBP',OBP, {"actions":false})
-    vegaEmbed('#ECFP',ECFP, {"actions":false})
-    vegaEmbed('amphibianMap',amphibianMap, {"actions":false})
+
+    var amphibianMap = "./js/maps/amphibianMap.json";
+    vegaEmbed('#amphibianMap',amphibianMap, {"actions":false});
+
+
+    var OBP = "./js/animalData/ParrotPop.json";
+    vegaEmbed('#OBP',OBP, {"actions":false});
+
+    var ECFP = "./js/animalData/curlewFlightPaths.json";
+    vegaEmbed('#ECFP',ECFP, {"actions":false});
+
+    var FPC = "./js/animalData/frogpopchart.json"
+    vegaEmbed('#FPC',FPC, {"actions":false});
   </script>
 
 </body>
