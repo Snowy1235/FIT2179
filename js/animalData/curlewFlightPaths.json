@@ -29,9 +29,6 @@
           "latitude": {"field": "location-lat", "type": "quantitative"},
           "order":{"field":"timestamp","type": "temporal"}
         }
-      },
-      {
-        
       }
     ]
   }
