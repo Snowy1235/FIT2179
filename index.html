@@ -35,6 +35,9 @@
         <p>In 2025 There were more than 2000 Extinct, Critically Endangered, Endangered and Vulnerable species living on our land</p>
       </div>
     </div>
+    <div class = "pure-u-3-4">
+      <div id="allMap", class="vis-container"></div>
+    </div>
     <!-- end pure grid group -->
 
     <!-- Bird related viss -->
@@ -101,11 +104,8 @@
         <img src="images/SouthernCorroboree.png">
       </div>
       </div>
-      <div class="pure-u-1-4">
+      <div class="pure-u-1-2">
         <div id="FPC" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-4">
-        <div id="ECFP" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
         <h2>Red and Yellow Mountain Frog</h2>
@@ -137,6 +137,10 @@
   </div> <!-- end page -->
 
   <script type="text/javascript">
+    var allMap = "./js/maps/allMap.json"
+    vegaEmbed('#allMap', allMap, { "actions": false });
+    
+
     var birdMap = "./js/maps/birdMap.json";
     vegaEmbed('#birdMap', birdMap, { "actions": false });
 

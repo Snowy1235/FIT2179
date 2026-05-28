@@ -1,20 +1,32 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "height":200,
+    "height":400,
+    "projection": {"type": "equirectangular"},
+    "config": {
+        "view": {"stroke":"transparent"}
+    },
     "background":"#ffffff",
     "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/shapefiles/Aust-region-shapemap.topojson",
+          "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
+        },
+        
+        "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
+      },
       {
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
         },
         "transform": [
-          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Amphibians' & datum.NationalPriorityTaxa==1"}
+          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155"}
         ],
-        "mark": {"type": "bar", "tooltip": {"content": "data"}},
+        "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
         "encoding": {
-          "y": {"field": "CommonName", "type": "ordinal","sort":"x"},
-          "x": {"field": "Population", "type": "quantitative", "aggregate":"average"},
+          "longitude": {"field": "RegionCentroidLongitude", "type": "quantitative"},
+          "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"},
           "color":{
             "field":"IUCNStatus",
             "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
@@ -24,7 +36,7 @@
               "domain":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
               "range": ["#d7191c","#fdae61","#ffffbf","#a6d96a","#1a9641"]
             },
-            "legend":{"offset":-120}
+            "legend":{"offset":-100}
           },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
