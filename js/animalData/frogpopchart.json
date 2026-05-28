@@ -13,7 +13,7 @@
         "mark": {"type": "bar", "tooltip": {"content": "data"},"size":100},
         "encoding": {
           "x": {"field": "CommonName", "type": "ordinal"},
-          "y": {"field": "Population", "type": "quantitative"},
+          "y": {"field": "Population", "type": "ordinal"},
           "color":{
             "field":"IUCNStatus",
             "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
