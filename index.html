@@ -45,6 +45,8 @@
       <div class = "pure-u-1-1">
         <h2>Birds</h2>
       </div>
+
+
       <div class="pure-u-1-4">
         <div>
           <img src="images/OrangeBelliedParrotmed.png">
@@ -63,6 +65,7 @@
         <img src="images/eastern curlew.jpg">
       </div>
 
+
       <div class="pure-u-1-2">
           <h2>Orange-Bellied Parrot</h2>
           <p>Orange-Bellied parrots are one of the lowest population bird species in all of Australia with less than 100 recorded birds appearing each year since 2019.</p>
@@ -75,7 +78,8 @@
         <p>These birds can be seen throughout the coastlines of Australia and travel thousands of kilometers each year.</p>
         <p>The far eastern curlew, despite having an estimated number of mature birds in the range of 23 thousand, is still a vulnerable species of which nearly 75% come to Australia for the summer to roost.</p>
       </div>
-    <!--Show all super endangered birds-->
+
+
       <div class="pure-u-1-4">   
         <h2>Chart desc</h2>
         <p></p>
@@ -92,39 +96,156 @@
 
       </div>
     </div>
+    <!--End birds-->
 
-    <!--Plant heading-->
+    <!--Amphibians-->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h2>Amphibians</h2>
       </div>
 
-      <div class="pure-u-1-3">
+
+      <div class="pure-u-7-24">
         <div>
           <h2>Southern Corroboree Frog</h2>
         <img src="images/SouthernCorroboree.png">
       </div>
+
       </div>
-      <div class="pure-u-1-3">
+      <div class="pure-u-10-24">
         <h2>Endangered Frogs</h2>
         <div id="FPC" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-3">
+
+      <div class="pure-u-7-24">
         <h2>Red and Yellow Mountain Frog</h2>
         <img src="images/RedNYellowFrog.webp">
+      </div>
+
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
       </div>
 
       <div class="pure-u-1-2">
         <p>#######</p>
       </div>
-      <div class="pure-u-1-2">
-        <p>#######</p>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
       </div>
 
       <div class="pure-u-1-2">
         <div id="amphibianMap" class="vis-container"></div>
       </div>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
+      </div>
     </div>
+    <!--End amphibian-->
+
+    <!--Plants-->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Plants</h2>
+      </div>
+
+
+      <div class="pure-u-7-24">
+        <div>
+          <h2>Southern Corroboree Frog</h2>
+        <img src="images/SouthernCorroboree.png">
+      </div>
+
+      </div>
+      <div class="pure-u-10-24">
+        <h2>Endangered Frogs</h2>
+        <div id="FPC" class="vis-container"></div>
+      </div>
+
+      <div class="pure-u-7-24">
+        <h2>Red and Yellow Mountain Frog</h2>
+        <img src="images/RedNYellowFrog.webp">
+      </div>
+
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
+      </div>
+
+      <div class="pure-u-1-2">
+        <div id="plantMap" class="vis-container"></div>
+      </div>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
+      </div>
+    </div>
+    <!--End Plants-->
+
+        <!--Plants-->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>Plants</h2>
+      </div>
+
+
+      <div class="pure-u-7-24">
+        <div>
+          <h2>Southern Corroboree Frog</h2>
+        <img src="images/SouthernCorroboree.png">
+      </div>
+
+      </div>
+      <div class="pure-u-10-24">
+        <h2>Endangered Frogs</h2>
+        <div id="FPC" class="vis-container"></div>
+      </div>
+
+      <div class="pure-u-7-24">
+        <h2>Red and Yellow Mountain Frog</h2>
+        <img src="images/RedNYellowFrog.webp">
+      </div>
+
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+
+      <div class="pure-u-1-2">
+        <p>#######</p>
+      </div>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
+      </div>
+
+      <div class="pure-u-1-2">
+        <div id="mamMap" class="vis-container"></div>
+      </div>
+
+      <div class="pure-u-1-4">   
+        <h2>Chart desc</h2>
+        <p></p>
+      </div>
+    </div>
+    <!--End Plants-->
+
+    
 
     <!-- Sources -->
     <div class="pure-g">
@@ -145,9 +266,15 @@
 
     var birdMap = "./js/maps/birdMap.json";
     vegaEmbed('#birdMap', birdMap, { "actions": false });
+    
+    var plantMap = "./js/maps/plantMap.json";
+    vegaEmbed('#plantMap', plantMap, { "actions": false });
 
     var amphibianMap = "./js/maps/amphibianMap.json";
     vegaEmbed('#amphibianMap',amphibianMap, {"actions":false});
+
+    var mamMap = "./js/maps/mammalMap.json";
+    vegaEmbed('#mamMap',mamMap, {"actions":false});
 
 
     var OBP = "./js/animalData/ParrotPop.json";

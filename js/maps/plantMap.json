@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height":400,
+    "projection": {"type": "equirectangular"},
+    "config": {
+        "view": {"stroke":"transparent"}
+    },
+    "background":"#ffffff",
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/shapefiles/Aust-region-shapemap.topojson",
+          "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
+        },
+        
+        "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
+        },
+        "transform": [
+          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Plants' & datum.NationalPriorityTaxa==1"}
+        ],
+        "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
+        "encoding": {
+          "longitude": {"field": "RegionCentroidLongitude", "type": "quantitative"},
+          "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"},
+          "color":{
+            "field":"IUCNStatus",
+            "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
+            "title":"Endangerment status",
+            "type": "nominal",
+            "scale": {
+              "domain":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
+              "range": ["#d7191c","#fdae61","#ffffbf","#a6d96a","#1a9641"]
+            },
+            "legend":{"offset":-100}
+          },
+          "tooltip":[
+            {"field":"CommonName","title":"Name"},
+            {"field":"Population","title":"Estimated population"}
+          ]
+        }
+      }
+    ]
+  }
