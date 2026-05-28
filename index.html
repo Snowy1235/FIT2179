@@ -31,13 +31,17 @@
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Flora and fauna endangerment</h1>
-        <p>Page description</p>
+        <p>Every year the number of endangered species in Australia grows</p>
+        <p>In 2025 There were more than 2000 Extinct, Critically Endangered, Endangered and Vulnerable species living on our land</p>
       </div>
     </div>
     <!-- end pure grid group -->
 
     <!-- Bird related viss -->
     <div class="pure-g">
+      <div class = "pure-u-1-1">
+        <h2>Birds</h2>
+      </div>
       <div class="pure-u-1-4">
         <div class="description description-right">
           <img src="images/OrangeBelliedParrotmed.png">
@@ -67,11 +71,8 @@
         <h2>Far Eastern Curlew</h2>
         <p>These birds can be seen throughout the coastlines of Australia and travel thousands of kilometers each year</p>
         <p>The far eastern curlew, despite having an estimated number of mature birds in the range of 23 thousand, is still a vulnerable species of which nearly 75% come to Australia for the summer to roost</p>
-        
       </div>
-    </div>
     <!--Show all super endangered birds-->
-    <div class="pure-g">
       <div class="pure-u-1-4">
         <h2>Endangered birds which are monitored</h2>
         <p>There are 5 birds directly monitored by the australian government, being the most at risk in the country.</p>
@@ -79,21 +80,21 @@
         <p>By far the most recorded bird is the far eastern curlew, likely because they are shorebirds and most Australians live near the coastline.</p>
       </div>
       <div class="pure-u-1-2">
-        <div id="EndangeredMap" class="vis-container"></div>
+        <div id="birdMap" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
-        <h></h>
+        <h2></h2>
         <p></p>
       </div>
-
-      
     </div>
 
     <!--Plant heading-->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h2>a</h2>
-        <p>a</p>
+        <h2>Amphibians</h2>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="amphibianMap" class="vis-container"></div>
       </div>
     </div>
 
@@ -107,18 +108,17 @@
         </p>
       </div>
     </div>
-
-
   </div> <!-- end page -->
 
   <script type="text/javascript">
-    var specVis1 = "./js/symbol_map_with_graticules.vg.json";
-    var specVis2 = "./js/ParrotPop.json"
-    var specVis3 = "./js/curlewFlightPaths.json"
-    vegaEmbed('#EndangeredMap', specVis1, { "actions": false });
-    vegaEmbed('#OBP',specVis2, {"actions":false})
-    vegaEmbed('#ECFP',specVis3, {"actions":false})
-
+    var birdMap = "./js/birdMap.json";
+    var OBP = "./js/ParrotPop.json"
+    var ECFP = "./js/curlewFlightPaths.json"
+    var amphibianMap = "./js/amphibianMap.json"
+    vegaEmbed('#birdMap', birdMap, { "actions": false });
+    vegaEmbed('#OBP',OBP, {"actions":false})
+    vegaEmbed('#ECFP',ECFP, {"actions":false})
+    vegaEmbed('amphibianMap',amphibianMap, {"actions":false})
   </script>
 
 </body>
