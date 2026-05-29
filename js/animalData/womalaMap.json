@@ -21,7 +21,7 @@
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/koala.csv"
         },
         "transform": [
-          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155"}
+          {"filter":"datum.decimalLongitude > 111 & datum.decimalLongitude < 155"}
         ],
         "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
         "encoding": {
