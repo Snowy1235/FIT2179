@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
-    "height":400,
+    
     "projection": {"type": "conicEquidistant","rotate":[-120,0,0]},
     "background": null,
     "config": {
