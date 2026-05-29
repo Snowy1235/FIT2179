@@ -1,50 +1,424 @@
-body *{
+body * {
   font-family: 'Open Sans', sans-serif;
-  
-}
-
-h1 {
-  font-weight: 900;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(209, 209, 209);
+  margin: 0;
+  background: #e8e1d4;
+  color: #2b2b2b;
+  line-height: 1.7;
 }
 
-img {
-  width: 100%;
-  margin: auto;
-}
+/* =========================
+   PAGE
+========================= */
 
 .page {
   width: 1200px;
-  background-color: rgb(255, 255, 255);
   margin: auto;
-  padding: 20px;
-  padding-top: 15px;
+  padding: 20px 0 60px 0;
+  background: #f6f1e7;
 }
 
-.vis-container {
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #234336;
+  text-align: center;
+}
+
+/* Animal names */
+.text-section h2,
+.pure-u-7-24 h2 {
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+h3 {
+  font-family: 'Merriweather', serif;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: #444;
+  margin-top: 0;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+  background: linear-gradient(135deg, #2f6d5a, #214237);
+  color: white;
+  padding: 50px;
+  margin-bottom: 90px;
+}
+
+.hero-section h1,
+.hero-section p,
+.hero-section h3 {
+  color: white;
+}
+
+.hero-text {
+  font-size: 18px;
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.12);
+  border-left: 3px solid rgba(255,255,255,0.65);
+  min-width: 140px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 32px;
+  margin: 0;
+}
+
+.stat-card p {
+  margin-top: 6px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+
+.section-card {
+  margin-bottom: 110px;
+  padding: 35px;
   width: 100%;
 }
 
-.description h2,
-h1 {
-  margin-top: 0px;
+/* =========================
+   FLOWING SECTION GRADIENTS
+========================= */
+
+/* Birds -> Amphibians */
+.section-card:nth-of-type(2) {
+  background:
+    linear-gradient(
+      to bottom,
+      #eee6c8 0%,
+      #eee6c8 95%,
+      #d7e7f5 100%
+    );
 }
 
-.description-right {
-  padding-left: 20px;
+/* Amphibians -> Plants */
+.section-card:nth-of-type(3) {
+  background:
+    linear-gradient(
+      to bottom,
+      #d7e7f5 0%,
+      #d7e7f5 95%,
+      #dcefdc 100%
+    );
 }
 
-.description-left {
-  padding-right: 20px;
+/* Plants -> Mammals */
+.section-card:nth-of-type(4) {
+  background:
+    linear-gradient(
+      to bottom,
+      #dcefdc 0%,
+      #dcefdc 95%,
+      #efd9cf 100%
+    );
 }
+
+/* Mammals -> Page background */
+.section-card:nth-of-type(5) {
+  background:
+    linear-gradient(
+      to bottom,
+      #efd9cf 0%,
+      #efd9cf 95%,
+      #f6f1e7 100%
+    );
+}
+
+/* =========================
+   GRID SPACING
+========================= */
 
 .pure-g {
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
+
+.pure-u-1-2,
+.pure-u-1-4,
+.pure-u-7-24,
+.pure-u-10-24,
+.pure-u-3-4,
+.pure-u-1-1 {
+  padding: 4px;
+}
+
+/* =========================
+   SECTION INTRO
+========================= */
+
+.section-intro {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+/* =========================
+   VISUALISATIONS
+========================= */
+
+.vis-container {
+  width: 100%;
+  padding: 0;
+}
+
+/* =========================
+   TEXT AREAS
+========================= */
+
+.text-section,
+.side-panel {
+  padding-top: 8px;
+}
+
+.text-section p,
+.side-panel p {
+  text-align: left;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+  color: #2f5d50;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .small-font {
   font-size: 14px;
+  color: #666;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.small-font p {
+  color: #666;
+}
+
+/* =========================
+   MAP SPACING
+========================= */
+
+#birdMap,
+#plantMap,
+#amphibianMap,
+#mamMap,
+#OBP,
+#ECFP,
+#FPC,
+#allMap {
+  margin-top: 4px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 1250px) {
+
+  .page {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .text-section h2,
+  .pure-u-7-24 h2 {
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .hero-section {
+    padding: 30px;
+  }
+
+}
+
+.map-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+  margin-bottom: 28px;
+  padding: 18px 22px;
+
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group label {
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+}
+
+.control-group select {
+  padding: 8px 12px;
+  border: none;
+  font-size: 15px;
+  background: rgba(255,255,255,0.92);
+}
+
+.checkbox-group {
+  justify-content: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-group {
+  min-width: 320px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-row span {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  width: 100px;
+}
+
+#threatLabel {
+  margin-top: 8px;
+  color: rgba(255,255,255,0.92);
+  font-size: 13px;
+}
+
+/* =========================
+   TAXA CHECKBOXES
+========================= */
+
+.taxa-group {
+  min-width: 320px;
+}
+
+.taxa-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.taxa-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  background: rgba(255,255,255,0.14);
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.taxa-checkboxes label:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.taxa-checkboxes input {
+  accent-color: #2f7b62;
 }

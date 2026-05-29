@@ -6,7 +6,7 @@
     "config": {
         "view": {"stroke":"transparent"}
     },
-    "background":"#ffffff",
+    "background": null,
     "layer": [
       {
         "data": {
@@ -20,27 +20,49 @@
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
         },
+        "params": [
+          {
+            "name": "speciesSelect",
+            "select": {
+              "type": "point",
+              "fields": ["CommonName"]
+            }
+          }
+        ],
         "transform": [
+          {"calculate": "replace(datum.Binomial,'_',' ')", "as":"sciName"},
           {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Mammals' & datum.NationalPriorityTaxa==1"}
         ],
-        "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
+        "mark": {"type": "circle", "tooltip": {"content": "data"}},
         "encoding": {
           "longitude": {"field": "RegionCentroidLongitude", "type": "quantitative"},
           "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"},
           "color":{
+            "field":"CommonName",
+            "scale":{"scheme":"paired"}
+          },
+          "opacity": {
+            "condition": {
+              "param": "speciesSelect",
+              "value": 1
+            },
+            "value": 0.18
+          },
+          "size":{
             "field":"IUCNStatus",
             "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
             "title":"Endangerment status",
             "type": "nominal",
             "scale": {
               "domain":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
-              "range": ["#d7191c","#fdae61","#ffffbf","#a6d96a","#1a9641"]
-            },
-            "legend":{"offset":-100}
+              "range":[100,400]
+            }
           },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
-            {"field":"Population","title":"Estimated population"}
+            {"field":"sciName","title":"Scientific Name"},
+            {"field":"Population","title":"Estimated population"},
+            {"field":"IUCNStatus", "title":"Vulnerability"}
           ]
         }
       }

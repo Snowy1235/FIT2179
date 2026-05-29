@@ -3,54 +3,142 @@
 
 <head>
   <title>Australias most endangered flora and fauna</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+
+  <!-- Vega -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PureCSS -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
 
-  <!-- Google font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
 
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
   <div class="page">
-    <!-- Bird heading -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
+
+    <!-- HERO -->
+    <div class="pure-g hero-section">
+
+      <div class="pure-u-1-1 hero-text-container">
+
         <h1>Flora and fauna endangerment</h1>
-        <p>Every year the number of endangered species in Australia grows</p>
-        <p>In 2025 there were more than 2000 distinct Critically Endangered, Endangered and Vulnerable species living on our land</p>
-      </div>
-    </div>
-    <div class = "pure-u-3-4">
-      <div id="allMap", class="vis-container"></div>
-    </div>
-    <!-- end pure grid group -->
 
-    <!-- Bird related viss -->
-    <div class="pure-g">
-      <div class = "pure-u-1-1">
-        <h2>Birds</h2>
+        <p class="hero-text">
+          Every year the number of endangered species in Australia grows.
+        </p>
+
+        <p class="hero-text">
+          In 2025 there were more than 2000 distinct Critically Endangered,
+          Endangered and Vulnerable species living on our land.
+        </p>
+
       </div>
 
+      <div class="pure-u-1-1">
+        <h2>Below: map of all recorded species sightings since 1950</h2>
+        <div id="allMap" class="vis-container"></div>
+        <div class="map-controls">
+          <div class="control-group taxa-group">
+
+            <label>Taxonomic Groups</label>
+
+              <div class="taxa-checkboxes">
+
+                <label>
+                  <input type="checkbox"
+                        class="taxaCheck"
+                        value="Birds"
+                        checked>
+                  Birds
+                </label>
+
+                <label>
+                  <input type="checkbox"
+                        class="taxaCheck"
+                        value="Amphibians"
+                        checked>
+                  Amphibians
+                </label>
+
+                <label>
+                  <input type="checkbox"
+                        class="taxaCheck"
+                        value="Plants"
+                        checked>
+                  Plants
+                </label>
+
+                <label>
+                  <input type="checkbox"
+                        class="taxaCheck"
+                        value="Mammals"
+                        checked>
+                  Mammals
+                </label>
+
+              </div>
+
+            </div>
+              <label>
+                <input type="checkbox" id="priorityToggle">
+                National Priority Species Only
+              </label>
+            </div>
+        </div>
+
+      <div class="pure-u-1-1 hero-text-container">
+        <div class="stats">
+
+          <div class="stat-card">
+            <h3>2000+</h3>
+            <p>Threatened Species</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>164</h3>
+            <p>Threatened Birds</p>
+          </div>
+
+          <div class="stat-card">
+            <h3>&lt;100</h3>
+            <p>Orange-Bellied Parrots</p>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- BIRDS -->
+    <div class="pure-g section-card">
+
+      <div class="pure-u-1-1">
+        <h1>Birds</h1>
+
+        <p class="section-intro">
+          Australia's endangered birds face habitat destruction,
+          shrinking ecosystems and climate change.
+        </p>
+      </div>
 
       <div class="pure-u-1-4">
-        <div>
-          <img src="images/OrangeBelliedParrotmed.png">
-          </div>
+        <img src="images/OrangeBelliedParrotmed.png">
       </div>
 
       <div class="pure-u-1-4">
@@ -65,226 +153,429 @@
         <img src="images/eastern curlew.jpg">
       </div>
 
+      <div class="pure-u-1-2 text-section">
 
-      <div class="pure-u-1-2">
-          <h2>Orange-Bellied Parrot</h2>
-          <p>Orange-Bellied parrots are one of the lowest population bird species in all of Australia with less than 100 recorded birds appearing each year since 2019.</p>
-          <p>Conservation efforts have seen increases in population every year, with tens of birds bred in captivity released every year during their migration.</p>
-        
+        <h2>Orange-Bellied Parrot</h2>
+
+        <p>
+          Orange-Bellied parrots are one of the lowest population bird
+          species in all of Australia with less than 100 recorded birds
+          appearing each year since 2019.
+        </p>
+
+        <p>
+          Conservation efforts have seen increases in population every year,
+          with tens of birds bred in captivity released every year during
+          their migration.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-2">
+      <div class="pure-u-1-2 text-section">
+
         <h2>Far Eastern Curlew</h2>
-        <p>These birds can be seen throughout the coastlines of Australia and travel thousands of kilometers each year.</p>
-        <p>The far eastern curlew, despite having an estimated number of mature birds in the range of 23 thousand, is still a vulnerable species of which nearly 75% come to Australia for the summer to roost.</p>
+
+        <p>
+          These birds can be seen throughout the coastlines of Australia
+          and travel thousands of kilometers each year.
+        </p>
+
+        <p>
+          The far eastern curlew, despite having an estimated number of
+          mature birds in the range of 23 thousand, is still a vulnerable
+          species of which nearly 75% come to Australia for the summer
+          to roost.
+        </p>
+
       </div>
 
+      <div class="pure-u-1-4 side-panel">
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+        <h2>Monitoring</h2>
+
+        <p>
+          Population monitoring helps conservationists understand which
+          species are declining most rapidly.
+        </p>
+
       </div>
+
       <div class="pure-u-1-2">
         <h2>Endangered Birds</h2>
         <div id="birdMap" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-4">
+
+      <div class="pure-u-1-4 side-panel">
+
         <h2>Endangered birds which are monitored</h2>
-        <p>There are 5 birds directly monitored by the australian government, being the most at risk in the country.</p>
-        <p>This contrasts hugely with the 164 endangered birds listed in australia as vulnerable, endangered or critically endangered.</p>
-        <p>By far the most recorded bird is the far eastern curlew, likely because they are shorebirds and most Australians live near the coastline.</p>
+
+        <p>
+          There are 5 birds directly monitored by the australian government,
+          being the most at risk in the country.
+        </p>
+
+        <p>
+          This contrasts hugely with the 164 endangered birds listed in
+          australia as vulnerable, endangered or critically endangered.
+        </p>
+
+        <p>
+          By far the most recorded bird is the far eastern curlew,
+          likely because they are shorebirds and most Australians
+          live near the coastline.
+        </p>
 
       </div>
+
     </div>
-    <!--End birds-->
 
-    <!--Amphibians-->
-    <div class="pure-g">
+    <!-- AMPHIBIANS -->
+    <div class="pure-g section-card">
+
       <div class="pure-u-1-1">
-        <h2>Amphibians</h2>
+        <h1>Amphibians</h1>
+
+        <p class="section-intro">
+          Amphibians are among Australia's most environmentally sensitive species.
+        </p>
       </div>
 
-
       <div class="pure-u-7-24">
-        <div>
-          <h2>Southern Corroboree Frog</h2>
+
+        <h2>Southern Corroboree Frog</h2>
+
         <img src="images/SouthernCorroboree.png">
-      </div>
 
       </div>
+
       <div class="pure-u-10-24">
+
         <h2>Endangered Frogs</h2>
+
         <div id="FPC" class="vis-container"></div>
+
       </div>
 
       <div class="pure-u-7-24">
+
         <h2>Red and Yellow Mountain Frog</h2>
+
         <img src="images/RedNYellowFrog.webp">
+
       </div>
 
+      <div class="pure-u-1-2 text-section">
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+        <p>
+          Frog populations are rapidly declining due to habitat destruction,
+          disease and changing environmental conditions.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+      <div class="pure-u-1-2 text-section">
+
+        <p>
+          Captive breeding programs have become essential to the survival
+          of several endangered amphibian species.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+      <div class="pure-u-1-4 side-panel">
+
+        <h2>Distribution</h2>
+
+        <p>
+          Endangered amphibians are concentrated in fragile alpine
+          and rainforest ecosystems.
+        </p>
+
       </div>
 
       <div class="pure-u-1-2">
         <div id="amphibianMap" class="vis-container"></div>
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+      <div class="pure-u-1-4 side-panel">
+
+        <h2>Threats</h2>
+
+        <p>
+          Climate change and fungal disease remain major threats
+          to Australian frog species.
+        </p>
+
       </div>
+
     </div>
-    <!--End amphibian-->
 
-    <!--Plants-->
-    <div class="pure-g">
+    <!-- PLANTS -->
+    <div class="pure-g section-card">
+
       <div class="pure-u-1-1">
-        <h2>Plants</h2>
-      </div>
 
+        <h1>Plants</h1>
+
+        <p class="section-intro">
+          Native Australian flora supports entire ecosystems and biodiversity hotspots.
+        </p>
+
+      </div>
 
       <div class="pure-u-7-24">
-        <div>
-          <h2>Southern Corroboree Frog</h2>
-        <img src="images/SouthernCorroboree.png">
-      </div>
+
+        <h2>Wollemi Pine</h2>
+
+        <img src="images/WollemiPine.png">
 
       </div>
+
       <div class="pure-u-10-24">
-        <h2>Endangered Frogs</h2>
+
+        <h2>Vis</h2>
+
         <div id="FPC" class="vis-container"></div>
+
       </div>
 
       <div class="pure-u-7-24">
-        <h2>Red and Yellow Mountain Frog</h2>
-        <img src="images/RedNYellowFrog.webp">
+
+        <h2>Small-Flowered Snottygobble</h2>
+
+        <img src="images/smallFlower.png">
+
       </div>
 
+      <div class="pure-u-1-2 text-section">
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+        <p>
+          Many plant species are vulnerable due to land clearing,
+          bushfires and invasive species.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+      <div class="pure-u-1-2 text-section">
+
+        <p>
+          Rare flora often survive only within isolated environments
+          and protected habitats.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+      <div class="pure-u-1-4 side-panel">
+
+        <h2>Environmental Pressure</h2>
+
+        <p>
+          Habitat fragmentation continues to reduce biodiversity
+          throughout Australia.
+        </p>
+
       </div>
 
       <div class="pure-u-1-2">
         <div id="plantMap" class="vis-container"></div>
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+      <div class="pure-u-1-4 side-panel">
+
+        <h2>Conservation</h2>
+
+        <p>
+          Long-term conservation efforts are critical for ecosystem survival.
+        </p>
+
       </div>
+
     </div>
-    <!--End Plants-->
 
-        <!--Plants-->
-    <div class="pure-g">
+    <!-- MAMMALS -->
+    <div class="pure-g section-card">
+
       <div class="pure-u-1-1">
-        <h2>Plants</h2>
+
+        <h1>Mammals</h1>
+
+        <p class="section-intro">
+          Australia has one of the world's highest mammal extinction rates.
+        </p>
+
       </div>
 
-
       <div class="pure-u-7-24">
-        <div>
-          <h2>Southern Corroboree Frog</h2>
+
+        <h2>Koala</h2>
+
         <img src="images/SouthernCorroboree.png">
-      </div>
 
       </div>
+
       <div class="pure-u-10-24">
-        <h2>Endangered Frogs</h2>
+
+        <h2>Vis</h2>
+
         <div id="FPC" class="vis-container"></div>
+
       </div>
 
       <div class="pure-u-7-24">
-        <h2>Red and Yellow Mountain Frog</h2>
+
+        <h2>Numbat</h2>
+
         <img src="images/RedNYellowFrog.webp">
+
       </div>
 
+      <div class="pure-u-1-2 text-section">
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+        <p>
+          Introduced predators and habitat fragmentation continue
+          to threaten native mammals.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-2">
-        <p>#######</p>
+      <div class="pure-u-1-2 text-section">
+
+        <p>
+          Conservation reserves play an increasingly important role
+          in species survival.
+        </p>
+
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
+      <div class="pure-u-1-4 side-panel">
+
+        <h2>Distribution</h2>
+
+        <p>
+          Threatened mammal species are distributed across diverse ecosystems.
+        </p>
+
       </div>
 
       <div class="pure-u-1-2">
         <div id="mamMap" class="vis-container"></div>
       </div>
 
-      <div class="pure-u-1-4">   
-        <h2>Chart desc</h2>
-        <p></p>
-      </div>
-    </div>
-    <!--End Plants-->
+      <div class="pure-u-1-4 side-panel">
 
-    
+        <h2>Conservation Areas</h2>
 
-    <!-- Sources -->
-    <div class="pure-g">
-      <div class="pure-u-1-1 small-font">
-        <p>This visualisation is created by <a href="#" target="_blank">Odin</a>. 
-          The datasources are <a href="https://tsx.org.au/tsx2024/?type=all&tgroup=All&group=All&subgroup=All&state=All&statusauth=Max&status=NT_VU_EN_CR&management=All&refyear=1985" target=" _blank">The Australian threatened species index</a>, 
-          <a href = "https://datarepository.movebank.org/bitstreams/82746625-64d3-4081-86e9-e26243e6197e/download" target = _blank>Movebank</a>,
-          <a hred="https://nre.tas.gov.au/conservation/threatened-species-and-communities/lists-of-threatened-species/threatened-species-vertebrates/orange-bellied-parrot/latest-updates#Previousupdates", taget=_blank>DNRET</a>
+        <p>
+          Protected habitats help preserve Australia's remaining native mammals.
         </p>
+
+      </div>
+
+      <div class="pure-u-7-24">
+
+        <h2>Northern Hairy-Nosed Wombat</h2>
+
+        <img src="images/SouthernCorroboree.png">
+
+      </div>
+
+      <div class="pure-u-10-24">
+
+        <h2>Bare-Rumped Sheathtail Bat</h2>
+
+        <div id="FPC" class="vis-container"></div>
+
       </div>
     </div>
-  </div> <!-- end page -->
 
+    <!-- SOURCES -->
+    <div class="pure-g">
+
+      <div class="pure-u-1-1 small-font">
+
+        <p>
+          This visualisation is created by Odin.
+        </p>
+
+        <p>
+          Datasources:
+          <a href="https://tsx.org.au/tsx2024/" target="_blank">
+            Threatened Species Index
+          </a>,
+          <a href="https://datarepository.movebank.org/" target="_blank">
+            Movebank
+          </a>,
+          <a href="https://nre.tas.gov.au/" target="_blank">
+            DNRET
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </body>
   <script type="text/javascript">
-    var allMap = "./js/maps/allMap.json"
-    vegaEmbed('#allMap', allMap, { "actions": false });
 
+    var allMap = "./js/maps/allMap.json";
+
+    var currentView;
+
+    vegaEmbed('#allMap', allMap, { actions: false }).then(function(result) {
+
+      currentView = result.view;
+      const taxaChecks =  document.querySelectorAll(".taxaCheck");
+      const priorityToggle = document.getElementById("priorityToggle");
+
+      function updateFilters() {
+
+        const selectedTaxa =
+          Array.from(taxaChecks)
+            .filter(c => c.checked)
+            .map(c => c.value);
+
+        currentView.signal(
+          "taxonomicFilter",
+          selectedTaxa
+        );
+
+        currentView.signal("priorityOnly", priorityToggle.checked);
+        currentView.run();
+      }
+
+      taxaChecks.forEach(check => {
+        check.addEventListener(
+          "change",
+          updateFilters
+        );
+      });
+      priorityToggle.addEventListener("change", updateFilters);
+      updateFilters();
+    });
 
     var birdMap = "./js/maps/birdMap.json";
     vegaEmbed('#birdMap', birdMap, { "actions": false });
-    
+
     var plantMap = "./js/maps/plantMap.json";
     vegaEmbed('#plantMap', plantMap, { "actions": false });
 
     var amphibianMap = "./js/maps/amphibianMap.json";
-    vegaEmbed('#amphibianMap',amphibianMap, {"actions":false});
+    vegaEmbed('#amphibianMap', amphibianMap, { "actions": false });
 
     var mamMap = "./js/maps/mammalMap.json";
-    vegaEmbed('#mamMap',mamMap, {"actions":false});
-
+    vegaEmbed('#mamMap', mamMap, { "actions": false });
 
     var OBP = "./js/animalData/ParrotPop.json";
-    vegaEmbed('#OBP',OBP, {"actions":false});
+    vegaEmbed('#OBP', OBP, { "actions": false });
 
     var ECFP = "./js/animalData/curlewFlightPaths.json";
-    vegaEmbed('#ECFP',ECFP, {"actions":false});
+    vegaEmbed('#ECFP', ECFP, { "actions": false });
 
     var FPC = "./js/animalData/frogpopchart.json"
-    vegaEmbed('#FPC',FPC, {"actions":false});
+    vegaEmbed('#FPC', FPC, { "actions": false });
+
   </script>
 
 </body>

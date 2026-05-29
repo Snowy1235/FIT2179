@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "title": "Orange Bellied Parrot sightings Australia",
-    "background": "#ffffff",
+    "background": null,
     "layer":[
         {
             "data": {

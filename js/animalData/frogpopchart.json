@@ -2,19 +2,20 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height":200,
-    "background":"#ffffff",
+    "background": null,
     "layer": [
       {
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
         },
         "transform": [
+          {"calculate": "replace(datum.Binomial,'_',' ')", "as":"sciName"},
           {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155 & datum.TaxonomicGroup=='Amphibians' & datum.NationalPriorityTaxa==1"}
         ],
         "mark": {"type": "bar", "tooltip": {"content": "data"}},
         "encoding": {
           "y": {"field": "CommonName", "type": "ordinal","sort":"x","title":"Species"},
-          "x": {"field": "Population", "type": "quantitative", "aggregate":"average"},
+          "x": {"field": "Population", "type": "quantitative", "aggregate":"average", "title":"Estimated population"},
           "color":{
             "field":"IUCNStatus",
             "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
@@ -28,6 +29,7 @@
           },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
+            {"field":"sciName","title":"Scientific Name"},
             {"field":"Population","title":"Estimated population"}
           ]
         }

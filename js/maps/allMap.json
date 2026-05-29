@@ -6,7 +6,22 @@
     "config": {
         "view": {"stroke":"transparent"}
     },
-    "background":"#ffffff",
+    "params": [
+      {
+        "name": "taxonomicFilter",
+        "value": [
+          "Bird",
+          "Amphibian",
+          "Plant",
+          "Mammal"
+        ]
+      },
+      {
+        "name": "priorityOnly",
+        "value": false
+      }
+    ],
+    "background": null,
     "layer": [
       {
         "data": {
@@ -20,7 +35,23 @@
         "data": {
           "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/tsx-aggregated-data.csv"
         },
+        "params": [
+          {
+            "name": "speciesSelect",
+            "select": {
+              "type": "point",
+              "fields": ["CommonName"]
+            }
+          }
+        ],
         "transform": [
+          {"calculate": "replace(datum.Binomial,'_',' ')", "as":"sciName"},
+          {
+            "filter": "indexof(taxonomicFilter, datum.TaxonomicGroup) >= 0"
+          },
+          {
+            "filter": "!priorityOnly || datum.NationalPriorityTaxa == 1"
+          },
           {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155"}
         ],
         "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
@@ -29,18 +60,34 @@
           "latitude": {"field": "RegionCentroidLatitude", "type": "quantitative"},
           "color":{
             "field":"IUCNStatus",
-            "sort":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
+            "sort":["Least Concern","Near Threatened", "Vulnerable","Endangered","Critically Endangered"],
             "title":"Endangerment status",
             "type": "nominal",
             "scale": {
-              "domain":["Critically Endangered","Endangered", "Vulnerable","Near Threatened","Least Concern"],
-              "range": ["#d7191c","#fdae61","#ffffbf","#a6d96a","#1a9641"]
+              "domain":["Least Concern","Near Threatened", "Vulnerable","Endangered","Critically Endangered"],
+              "range": ["#1a9641","#a6d96a","#ffffbf","#fdae61","#d7191c"]
             },
-            "legend":{"offset":-200}
+            "legend":{"offset":-80}
+          },
+          "opacity": {
+            "condition": {
+              "param": "speciesSelect",
+              "value": 1
+            },
+            "value": 0.1
+          },
+          "size": {
+            "condition": {
+              "param": "speciesSelect",
+              "value": 100
+            },
+            "value": 20
           },
           "tooltip":[
             {"field":"CommonName","title":"Name"},
-            {"field":"Population","title":"Estimated population"}
+            {"field":"sciName","title":"Scientific Name"},
+            {"field":"Population","title":"Estimated population"},
+            {"field":"IUCNStatus", "title":"Vulnerability"}
           ]
         }
       }
