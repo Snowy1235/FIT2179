@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "height":400,
+    "projection": {"type": "equirectangular"},
+    "config": {
+        "view": {"stroke":"transparent"}
+    },
+    "background": null,
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/shapefiles/Aust-region-shapemap.topojson",
+          "format": {"type": "topojson", "feature": "SA3_2021_AUST_GDA2020"}
+        },
+        
+        "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/data/koala.csv"
+        },
+        "transform": [
+          {"filter":"datum.RegionCentroidLongitude > 111 & datum.RegionCentroidLongitude < 155"}
+        ],
+        "mark": {"type": "circle", "tooltip": {"content": "data"},"size":100},
+        "encoding": {
+          "longitude": {"field": "decimalLongitude", "type": "quantitative"},
+          "latitude": {"field": "decimalLatitude", "type": "quantitative"},
+          "color":{
+            "field":"Animal",
+            "legend":{"offset":-80}
+          },
+          "tooltip":[
+            {"field":"Animal","title":"Name"}
+          ]
+        }
+      }
+    ]
+  }

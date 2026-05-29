@@ -197,7 +197,7 @@
 
         <p>
           Population monitoring helps conservationists understand which
-          species are declining most rapidly.
+          species are declining most rapidly. Unfortunately many at risk species are rarely monitored if at all, making it difficult to know how to best allocate resources for their conservation.
         </p>
 
       </div>
@@ -414,17 +414,18 @@
 
       <div class="pure-u-10-24">
 
-        <h2>Vis</h2>
+        <h2>Map of all koala and Hairy-Nosed Wombat sightings</h2>
 
-        <div id="FPC" class="vis-container"></div>
+        <div id="womalaMap" class="vis-container"></div>
 
       </div>
 
       <div class="pure-u-7-24">
 
-        <h2>Numbat</h2>
+        <h2>Northern Hairy-Nosed Wombat</h2>
 
-        <img src="images/numbat.png">
+        <img src="images/wombat.png">
+
 
       </div>
 
@@ -472,9 +473,9 @@
 
       <div class="pure-u-7-24">
 
-        <h2>Northern Hairy-Nosed Wombat</h2>
+        <h2>Numbat</h2>
 
-        <img src="images/wombat.png">
+        <img src="images/numbat.png">
 
       </div>
 
@@ -577,6 +578,9 @@
 
     var flowermap = "./js/animalData/flowerMap.json"
     vegaEmbed('#flowerMap', flowermap, { "actions": false });
+
+    var womalaMap = "./js/animalData/womalaMap.json"
+    vegaEmbed('#womalaMap', womalaMap, { "actions": false });
 
   </script>
 
