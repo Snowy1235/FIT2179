@@ -52,6 +52,8 @@
       <div class="pure-u-1-1">
         <h2>Below: map of all recorded species sightings since 1950</h2>
         <div id="allMap" class="vis-container"></div>
+        <p class = "note">Note: Population data has been used from as early as 2004 as the population of endangered flora and fauna is extremely difficult to measure regularly and thus may be outdated or unavailable</p>
+        <p class = "note">All national priority species have had their population documented on the map</p>
         <div class="map-controls">
           <div class="control-group taxa-group">
 
@@ -323,7 +325,7 @@
 
       </div>
 
-      <div class="pure-u-7-24">
+      <div class="pure-u-7-24"">
 
         <h2>Wollemi Pine</h2>
 
@@ -335,7 +337,7 @@
 
         <h2>Vis</h2>
 
-        <div id="FPC" class="vis-container"></div>
+        <div id="flowerMap" class="vis-container"></div>
 
       </div>
 
@@ -409,7 +411,7 @@
 
         <h2>Koala</h2>
 
-        <img src="images/SouthernCorroboree.png">
+        <img src="images/koala.png">
 
       </div>
 
@@ -425,7 +427,7 @@
 
         <h2>Numbat</h2>
 
-        <img src="images/RedNYellowFrog.webp">
+        <img src="images/numbat.png">
 
       </div>
 
@@ -475,15 +477,15 @@
 
         <h2>Northern Hairy-Nosed Wombat</h2>
 
-        <img src="images/SouthernCorroboree.png">
+        <img src="images/wombat.png">
 
       </div>
 
-      <div class="pure-u-10-24">
+      <div class="pure-u-7-24">
 
         <h2>Bare-Rumped Sheathtail Bat</h2>
-
-        <div id="FPC" class="vis-container"></div>
+        
+        <img src="images/bat.png">
 
       </div>
     </div>
@@ -575,6 +577,9 @@
 
     var FPC = "./js/animalData/frogpopchart.json"
     vegaEmbed('#FPC', FPC, { "actions": false });
+
+    var flowermap = "./js/animalData/flowerMap.json"
+    vegaEmbed('#flowerMap', flowermap, { "actions": false });
 
   </script>
 
