@@ -33,8 +33,8 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/shapefiles/2018633.topojson",
-          "format": {"type": "topojson", "feature": "2018633"}
+          "url": "https://raw.githubusercontent.com/Snowy1235/FIT2179/main/shapefiles/flowershape.topojson",
+          "format": {"type": "topojson", "feature": "a"}
         },
         "mark": {"type": "geoshape", "fill": "#d9d9d9", "stroke": "#797979"}
       }
