@@ -2,26 +2,11 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": "container",
     "height":400,
-    "projection": {"type": "equirectangular"},
+    "projection": {"type": "conicEquidistant","rotate":[-120,0,0]},
+    "background": null,
     "config": {
         "view": {"stroke":"transparent"}
     },
-    "params": [
-      {
-        "name": "taxonomicFilter",
-        "value": [
-          "Bird",
-          "Amphibian",
-          "Plant",
-          "Mammal"
-        ]
-      },
-      {
-        "name": "priorityOnly",
-        "value": false
-      }
-    ],
-    "background": null,
     "layer": [
       {
         "data": {
